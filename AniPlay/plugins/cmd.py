@@ -29,7 +29,7 @@ async def searchCMD(_, message: Message):
         await message.reply_text(QUERY.format(query), reply_markup=button)
     except Exception as e:
         try:
-            return await message.reply_text(f'Something Went Wrong...\n\n {str(e)}')
+            return await message.reply_text('**Anime Not Found...**\n\nProbably Incorrect Name, Try again')
         except:
             return
 

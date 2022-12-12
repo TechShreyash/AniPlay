@@ -202,6 +202,9 @@ class BTN:
 
         if len(durl) != 0:
             temp.append([InlineKeyboardButton(
+                text='➖➖➖➖➖➖➖➖➖➖', callback_data='line')])
+
+            temp.append([InlineKeyboardButton(
                 text='⬇️ English Dubbed ⬇️', callback_data='engDUB')])
 
             for i in durl:

@@ -46,7 +46,7 @@ async def AnimeS(_, query: CallbackQuery):
 
     await query.answer('Loading ...')
     img, text, ep = AnimeDex.anime(url[0])
-    print(len(ep))
+    
     text += '\n\n© ' + query.from_user.mention
     button = BTN.AnimeS(id, ep, hash)
 
@@ -80,6 +80,14 @@ async def episode(_, query: CallbackQuery):
     button = BTN.episode(id, surl, durl, url[1])
 
     await query.message.edit(text, reply_markup=button)
+
+
+@app.on_callback_query(filters.regex('line'))
+async def engSub(_, query: CallbackQuery):
+    try:
+        await query.answer()
+    except:
+        return
 
 
 @app.on_callback_query(filters.regex('engSUB'))
