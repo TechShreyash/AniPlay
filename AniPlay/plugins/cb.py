@@ -70,21 +70,21 @@ async def episode(_, query: CallbackQuery):
     if str(user) != id:
         return await query.answer("This Is Not Your Query...")
 
-    url = cache.get(hash)
+    epid = cache.get(hash)
 
-    if not url:
+    if not epid:
         await query.answer("Search Query Expired... Try Again")
         return await query.message.delete()
 
     await query.answer('Loading ...')
-    text, surl, durl = AnimeDex.episode(url[0])
-    button = BTN.episode(id, surl, durl, url[1])
+    text, surl, murl = AnimeDex.episode(url[0])
+    button = BTN.episode(id, surl, murl, url[1])
 
     await query.message.edit(text, reply_markup=button)
 
 
 @app.on_callback_query(filters.regex('line'))
-async def engSub(_, query: CallbackQuery):
+async def liner(_, query: CallbackQuery):
     try:
         await query.answer()
     except:
@@ -94,7 +94,7 @@ async def engSub(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex('engSUB'))
 async def engSub(_, query: CallbackQuery):
     try:
-        await query.answer('English Subbed Episodes')
+        await query.answer('Direct Stream Urls')
     except:
         return
 
@@ -102,7 +102,7 @@ async def engSub(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex('engDUB'))
 async def engDub(_, query: CallbackQuery):
     try:
-        await query.answer('English Dubbed Episodes')
+        await query.answer('Mirror Stream Urls')
     except:
         return
 

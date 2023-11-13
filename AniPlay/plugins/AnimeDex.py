@@ -34,23 +34,13 @@ class AnimeDex:
 
         return img, text, eplist
 
-    def episode(url):
-        soup = bs(requests.get(url).content, 'html.parser')
-        text = soup.find('b').text
+    def episode(id):
+        data =requests.get('https://api.anime-dex.workers.dev/episode/'+id).json()['results']
+        text =data['name']
+        surl =[
+            ('Stream 1',data['stream']['sources'][0]['file']),
+            ('Stream 2',data['stream']['sources_bk'][0]['file'])
+            ]
+        murl =data['servers'].items()
 
-        sub = soup.find('div', 'server').find_all('div', 'sitem')
-        surl = []
-        for i in sub:
-            url = 'https://animedex.live' + \
-                i.find('a').get('data-value').split(' ')[0]
-            surl.append((i.text.strip(), url))
-
-        dub = soup.find('div', 'server sd')
-        durl = []
-        if dub:
-            for i in dub.find_all('div', 'sitem'):
-                url = 'https://animedex.live' + \
-                    i.find('a').get('data-value').split(' ')[0]
-                durl.append((i.text.strip(), url))
-
-        return text, surl, durl
+        return text, surl, murl

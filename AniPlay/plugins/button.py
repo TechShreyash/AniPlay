@@ -177,12 +177,12 @@ class BTN:
                 text='Back', callback_data=f'searchBACK {id} {back}')])
             return InlineKeyboardMarkup(temp)
 
-    def episode(id, surl, durl, back):
+    def episode(id, surl, murl, back):
         temp = []
         pos = 1
         x = []
         temp.append([InlineKeyboardButton(
-            text='⬇️ English Subbed ⬇️', callback_data='engSUB')])
+            text='⬇️ Direct Url ⬇️', callback_data='engSUB')])
 
         for i in surl:
             if pos % 3 == 0:
@@ -205,9 +205,9 @@ class BTN:
                 text='➖➖➖➖➖➖➖➖➖➖', callback_data='line')])
 
             temp.append([InlineKeyboardButton(
-                text='⬇️ English Dubbed ⬇️', callback_data='engDUB')])
+                text='⬇️ Mirror Url ⬇️', callback_data='engDUB')])
 
-            for i in durl:
+            for i in murl:
                 if pos % 3 == 0:
                     x.append(
                         InlineKeyboardButton(text=i[0], url=i[1])
