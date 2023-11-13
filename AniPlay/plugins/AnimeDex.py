@@ -14,7 +14,7 @@ class AnimeDex:
         return data
         
     def anime(id):
-        data =requests.get(url).json()['results']
+        data =requests.get('https://api.anime-dex.workers.dev/anime/'+id).json()['results']
 
         title = data['name']
         text = f'{emoji()} **{title}**\n'
