@@ -39,6 +39,7 @@ async def AnimeS(_, query: CallbackQuery):
         return await query.answer("This Is Not Your Query...")
 
     anime = cache.get(hash)
+    print(anime)
 
     if not anime:
         await query.answer("Search Query Expired... Try Again")
