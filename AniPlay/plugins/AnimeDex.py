@@ -22,9 +22,8 @@ class AnimeDex:
         
         for i,j in data.items():
             if i not in ['name','image','id']:
-                text += '\n' + i.title().strip() +' : '+ j.strip().replace('\n', ' ')
+                text += '\n**' + i.title().strip() +' :** '+ j.strip().replace('\n', ' ')
 
-        text += f"\nGenres: {data['genre']}"
         ep = int(data['episodes'])
         eplist =[]
         for i in range(1,ep+1):
