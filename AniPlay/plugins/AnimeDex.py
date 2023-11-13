@@ -21,7 +21,7 @@ class AnimeDex:
         img = data['image']
         
         for i,j in data.items():
-            if i not in ['name','image','id']:
+            if i not in ['name','image','id','plot_summary']:
                 text += '\n**' + i.title().strip() +' :** '+ j.strip().replace('\n', ' ')
 
         ep = int(data['episodes'])
