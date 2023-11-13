@@ -25,8 +25,7 @@ class AnimeDex:
         for i,j in item:
             text += '\n' + i.title().strip() +' : '+ j.strip().replace('\n', ' ')
 
-        text += f'\nGenres: {data['genre']}'
-
+        text += f"\nGenres: {data['genre']}"
         ep = data['episodes']
 
         return img, text, ep
