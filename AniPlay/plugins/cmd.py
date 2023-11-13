@@ -33,29 +33,3 @@ async def searchCMD(_, message: Message):
             return await message.reply_text('**Anime Not Found...**\n\nProbably Incorrect Name, Try again')
         except:
             return
-
-
-@app.on_message(filters.command('stats'))
-async def stats(_, message: Message):
-    try:
-        await message.reply_text('Use /stats1 For Day Wise Stats\nAnd /stats2 For Overall Stats')
-    except:
-        return
-
-
-@app.on_message(filters.command('stats1'))
-async def stats1(_, message: Message):
-    try:
-        img = day()
-        await message.reply_photo(img, caption='**AnimeDex | Day Wise Stats**')
-    except:
-        return
-
-
-@app.on_message(filters.command('stats2'))
-async def stats2(_, message: Message):
-    try:
-        img = over()
-        await message.reply_photo(img, caption='**AnimeDex | Overall Stats**')
-    except:
-        return

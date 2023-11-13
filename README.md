@@ -9,7 +9,7 @@
 - Both English Sub And Dub Available
 - Fast And Easy To Use
 - Better UI
-> Powered By : https://animedex.live
+- Powered By TechZApi
 
 <hr>
 
@@ -17,8 +17,7 @@
 
 - /s or /search command to search
 - Then just click buttons to select anime and get links
-> Demo : [@AniPlayerBot](https://t.me/AniPlayerBot)
-- /stats To get stats of website
+> Demo : [@Ani_Play_Bot](https://t.me/Ani_Play_Bot)
 
 <hr>
 
