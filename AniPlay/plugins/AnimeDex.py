@@ -19,11 +19,10 @@ class AnimeDex:
         title = data['name']
         text = f'{emoji()} **{title}**\n'
         img = data['image']
-
-        item = []
         
-        for i,j in item:
-            text += '\n' + i.title().strip() +' : '+ j.strip().replace('\n', ' ')
+        for i,j in data:
+            if i not in ['name','image','id']:
+                text += '\n' + i.title().strip() +' : '+ j.strip().replace('\n', ' ')
 
         text += f"\nGenres: {data['genre']}"
         ep = int(data['episodes'])

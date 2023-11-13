@@ -213,13 +213,13 @@ class BTN:
             for i in murl:
                 if pos % 3 == 0:
                     x.append(
-                        InlineKeyboardButton(text=i[0], url=i[1])
+                        InlineKeyboardButton(text=i[0].title(), url=i[1])
                     )
                     temp.append(x)
                     x = []
                 else:
                     x.append(
-                        InlineKeyboardButton(text=i[0], url=i[1])
+                        InlineKeyboardButton(text=i[0].title(), url=i[1])
                     )
                 pos += 1
 
