@@ -38,14 +38,14 @@ async def AnimeS(_, query: CallbackQuery):
     if str(user) != id:
         return await query.answer("This Is Not Your Query...")
 
-    url = cache.get(hash)
+    anime = cache.get(hash)
 
-    if not url:
+    if not anime:
         await query.answer("Search Query Expired... Try Again")
         return await query.message.delete()
 
     await query.answer('Loading ...')
-    img, text, ep = AnimeDex.anime(url[0])
+    img, text, ep = AnimeDex.anime(anime)
     
     text += '\n\n© ' + query.from_user.mention
     button = BTN.AnimeS(id, ep, hash)

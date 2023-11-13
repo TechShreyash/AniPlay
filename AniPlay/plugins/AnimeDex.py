@@ -26,9 +26,13 @@ class AnimeDex:
             text += '\n' + i.title().strip() +' : '+ j.strip().replace('\n', ' ')
 
         text += f"\nGenres: {data['genre']}"
-        ep = data['episodes']
+        ep = int(data['episodes'])
+        eplist =[]
+        for i in range(1,ep+1):
+            eplist.append((i,f'{id}-episode-{i}'))
+            
 
-        return img, text, ep
+        return img, text, eplist
 
     def episode(url):
         soup = bs(requests.get(url).content, 'html.parser')
