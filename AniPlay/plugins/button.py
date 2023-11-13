@@ -187,18 +187,21 @@ class BTN:
         for i in surl:
             if pos % 3 == 0:
                 x.append(
-                    InlineKeyboardButton(text=i[0], url=i[1])
+                    InlineKeyboardButton(text=i[0], url='https://animedex.live/embed?url='+i[1])
                 )
                 temp.append(x)
                 x = []
             else:
                 x.append(
-                    InlineKeyboardButton(text=i[0], url=i[1])
+                    InlineKeyboardButton(text=i[0], url='https://animedex.live/embed?url='+i[1])
                 )
             pos += 1
 
         if len(x) != 0:
             temp.append(x)
+            
+        x=[]
+        pos=1
 
         if len(murl) != 0:
             temp.append([InlineKeyboardButton(
