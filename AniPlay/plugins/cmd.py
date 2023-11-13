@@ -3,7 +3,6 @@ from pyrogram import filters
 from AniPlay import app
 from AniPlay.plugins.AnimeDex import AnimeDex
 from AniPlay.plugins.button import BTN
-from AniPlay.plugins.stats import day, over
 
 
 @app.on_message(filters.command(['start', 'ping', 'help', 'alive']))
