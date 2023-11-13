@@ -200,7 +200,7 @@ class BTN:
         if len(x) != 0:
             temp.append(x)
 
-        if len(durl) != 0:
+        if len(murl) != 0:
             temp.append([InlineKeyboardButton(
                 text='➖➖➖➖➖➖➖➖➖➖', callback_data='line')])
 
