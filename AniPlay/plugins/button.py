@@ -49,9 +49,9 @@ class BTN:
         x = []
 
         for i in data:
-            cb = f'AnimeS {id} ' + get_hash(i[1], back)
+            cb = f'AnimeS {id} ' + get_hash(i['id'], back)
             temp.append([
-                InlineKeyboardButton(text=i[0], callback_data=cb)]
+                InlineKeyboardButton(text=i['title'], callback_data=cb)]
             )
         pos = len(temp)
         hash = get_hash_btn(None, None)
