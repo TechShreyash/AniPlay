@@ -1,6 +1,9 @@
-<h2 align="center"><b>AniPlay</b></h4>
 
-<p align="center" > <img alt="GitHub Forks" src="https://img.shields.io/github/forks/TechShreyash/AniPlay?label=%F0%9F%8D%B4Forks&logoColor=blue&style=social"> <img alt="GitHub Repo Stars" src="https://img.shields.io/github/stars/TechShreyash/AniPlay?label=%E2%AD%90%EF%B8%8FStars&logoColor=blue&style=social"></p>
+
+<p align="center" ><a href="https://github.com/TechShreyash/AniPlay">
+    <img src="https://socialify.git.ci/TechShreyash/AniPlay/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="AniPlay" width="640" height="320" /></a></p>
+
+<h2 align="center"><b>AniPlay</b></h2>
 
 <hr>
 
