@@ -46,7 +46,7 @@ async def AnimeS(_, query: CallbackQuery):
         return await query.message.delete()
 
     await query.answer('Loading ...')
-    img, text, ep = AnimeDex.anime(anime)
+    img, text, ep = AnimeDex.anime(anime[0])
     
     text += '\n\n© ' + query.from_user.mention
     button = BTN.AnimeS(id, ep, hash)
