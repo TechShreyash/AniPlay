@@ -26,7 +26,7 @@ async def searchBACK(_, query: CallbackQuery):
     await query.answer('Loading ...')
     data = AnimeDex.search(url[1])
     button = BTN.searchCMD(user, data, url[1])
-    await query.message.edit(QUERY.format(url[1]), reply_markup=button)
+    await query.message.edit(f'{QUERY.format(url[1])}\n\n© {query.from_user.mention}', reply_markup=button)
 
 
 @app.on_callback_query(filters.regex('AnimeS'))
@@ -80,7 +80,7 @@ async def episode(_, query: CallbackQuery):
     text, surl, murl = AnimeDex.episode(epid[0])
     button = BTN.episode(id, surl, murl, epid[1])
 
-    await query.message.edit(text, reply_markup=button)
+    await query.message.edit(f'**{text}**\n\n© {query.from_user.mention}', reply_markup=button)
 
 
 @app.on_callback_query(filters.regex('line'))

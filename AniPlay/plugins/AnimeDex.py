@@ -15,13 +15,15 @@ class AnimeDex:
         
     def anime(id):
         data =requests.get('https://api.anime-dex.workers.dev/anime/'+id).json()['results']
+        if data['source'] != 'gogoanime':
+            return
 
         title = data['name']
         text = f'{emoji()} **{title}**\n'
         img = data['image']
         
         for i,j in data.items():
-            if i not in ['name','image','id','plot_summary']:
+            if i not in ['name','image','id','plot_summary','source']:
                 text += '\n**' + i.title().strip() +' :** '+ j.strip().replace('\n', ' ')
 
         ep = int(data['episodes'])

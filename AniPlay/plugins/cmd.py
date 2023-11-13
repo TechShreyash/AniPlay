@@ -26,7 +26,7 @@ async def searchCMD(_, message: Message):
             return await message.reply_text('Give me something to search ^_^')
         data = AnimeDex.search(query)
         button = BTN.searchCMD(user, data, query)
-        await message.reply_text(QUERY.format(query), reply_markup=button)
+        await message.reply_text(f'{QUERY.format(query)}\n\n© {query.from_user.mention}', reply_markup=button)
     except Exception as e:
         try:
             return await message.reply_text('**Anime Not Found...**\n\nProbably Incorrect Name, Try again')
