@@ -20,7 +20,7 @@ class AnimeDex:
         text = f'{emoji()} **{title}**\n'
         img = data['image']
         
-        for i,j in data:
+        for i,j in data.items():
             if i not in ['name','image','id']:
                 text += '\n' + i.title().strip() +' : '+ j.strip().replace('\n', ' ')
 
