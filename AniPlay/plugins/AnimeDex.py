@@ -31,6 +31,8 @@ class AnimeDex:
                     "\n**" + i.title().strip() + " :** " + j.strip().replace("\n", " ")
                 )
 
+        text += "\n**Episodes :** " + str(len(data["episodes"]))
+
         return img, text, data["episodes"]
 
     def episode(id):
