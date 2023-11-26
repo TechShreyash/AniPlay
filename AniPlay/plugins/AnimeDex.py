@@ -52,7 +52,7 @@ class AnimeDex:
         return text, surl, murl
 
     def download(id):
-        data = requests.get("https://api.anime-dex.workers.dev/episode/" + id).json()[
+        data = requests.get("https://api.anime-dex.workers.dev/download/" + id).json()[
             "results"
         ]
         return data
