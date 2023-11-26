@@ -6,7 +6,7 @@ def CMDErrorHandler(func):
         try:
             return await func(_, message)
         except Exception as e:
-            print(e)
+            print(message.from_user.id, str(e))
             try:
                 await message.reply_text(
                     "Something went wrong.\n\nReport @TechZBots_Support"
@@ -23,7 +23,7 @@ def CBErrorHandler(func):
         try:
             return await func(_, query)
         except Exception as e:
-            print(e)
+            print(query.from_user.id, str(e))
             try:
                 await query.message.edit(
                     "Something went wrong.\n\nReport @TechZBots_Support"

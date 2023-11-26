@@ -47,5 +47,4 @@ async def searchCMD(_, message: Message):
 @app.on_message(filters.command(["report"]))
 @CMDErrorHandler
 async def reportCMD(_, message: Message):
-    raise Exception("Test Error")
     await message.reply_text("Report Bugs Here: @TechZBots_Support")

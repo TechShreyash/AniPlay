@@ -4,11 +4,13 @@ from pyrogram import filters
 from AniPlay import app
 from AniPlay.plugins.AnimeDex import AnimeDex
 from AniPlay.plugins.button import BTN, cache, get_hash
+from AniPlay.plugins.ErrorHandler import CBErrorHandler
 
 QUERY = "**Search Results:** `{}`"
 
 
 @app.on_callback_query(filters.regex("searchBACK"))
+@CBErrorHandler
 async def searchBACK(_, query: CallbackQuery):
     user = query.from_user.id
 
@@ -32,7 +34,9 @@ async def searchBACK(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("AnimeS"))
+@CBErrorHandler
 async def AnimeS(_, query: CallbackQuery):
+    raise Exception("This is a test exception")
     user = query.from_user.id
 
     _, id, hash = query.data.split(" ")
@@ -70,6 +74,7 @@ async def AnimeS(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("episode"))
+@CBErrorHandler
 async def episode(_, query: CallbackQuery):
     user = query.from_user.id
     dl_back_cb = query.data
@@ -97,6 +102,7 @@ async def episode(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("download"))
+@CBErrorHandler
 async def download(_, query: CallbackQuery):
     user = query.from_user.id
 
@@ -146,6 +152,7 @@ async def engDub(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("switch_ep"))
+@CBErrorHandler
 async def switch_ep(_, query: CallbackQuery):
     user = query.from_user.id
 
@@ -167,6 +174,7 @@ async def switch_ep(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("switch_anime"))
+@CBErrorHandler
 async def switch_anime(_, query: CallbackQuery):
     user = query.from_user.id
 
