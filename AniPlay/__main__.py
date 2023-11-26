@@ -3,6 +3,7 @@ import asyncio
 from AniPlay import app
 from pyrogram import idle
 from AniPlay.plugins import ALL_MODULES
+
 loop = asyncio.get_event_loop()
 
 
@@ -18,6 +19,7 @@ async def init():
     await app.stop()
     for task in asyncio.all_tasks():
         task.cancel()
+
 
 if __name__ == "__main__":
     loop.run_until_complete(init())
