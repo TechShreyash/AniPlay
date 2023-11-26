@@ -36,7 +36,6 @@ async def searchBACK(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex("AnimeS"))
 @CBErrorHandler
 async def AnimeS(_, query: CallbackQuery):
-    raise Exception("This is a test exception")
     user = query.from_user.id
 
     _, id, hash = query.data.split(" ")
