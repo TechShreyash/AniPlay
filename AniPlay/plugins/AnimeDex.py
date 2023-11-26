@@ -31,12 +31,7 @@ class AnimeDex:
                     "\n**" + i.title().strip() + " :** " + j.strip().replace("\n", " ")
                 )
 
-        ep = int(data["episodes"])
-        eplist = []
-        for i in range(1, ep + 1):
-            eplist.append((i, f"{id}-episode-{i}"))
-
-        return img, text, eplist
+        return img, text, data["episodes"]
 
     def episode(id):
         data = requests.get("https://api.anime-dex.workers.dev/episode/" + id).json()[
