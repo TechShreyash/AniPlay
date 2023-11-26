@@ -113,7 +113,7 @@ async def download(_, query: CallbackQuery):
 
     await query.answer("Loading ...")
     links = AnimeDex.download(data[0])
-    text = data[0].replace("-", "").title()
+    text = data[0].replace("-", " ").title()
     button = BTN.download(id, links, data[1])
 
     await query.message.edit(
