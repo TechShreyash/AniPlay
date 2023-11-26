@@ -3,11 +3,11 @@ from pyrogram import filters
 from AniPlay import app
 from AniPlay.plugins.AnimeDex import AnimeDex
 from AniPlay.plugins.button import BTN
-from AniPlay.plugins.ErrorHandler import ErrorHandler
+from AniPlay.plugins.ErrorHandler import CMDErrorHandler
 
 
 @app.on_message(filters.command(["start", "ping", "help", "alive"]))
-@ErrorHandler
+@CMDErrorHandler
 async def start(_, message: Message):
     try:
         await message.reply_text(
@@ -21,7 +21,7 @@ QUERY = "**Search Results:** `{}`"
 
 
 @app.on_message(filters.command(["search", "s"]))
-@ErrorHandler
+@CMDErrorHandler
 async def searchCMD(_, message: Message):
     try:
         user = message.from_user.id
@@ -45,7 +45,7 @@ async def searchCMD(_, message: Message):
 
 
 @app.on_message(filters.command(["report"]))
-@ErrorHandler
+@CMDErrorHandler
 async def reportCMD(_, message: Message):
     raise Exception("Test Error")
     await message.reply_text("Report Bugs Here: @TechZBots_Support")
