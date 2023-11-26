@@ -89,7 +89,7 @@ async def episode(_, query: CallbackQuery):
     text, surl, murl = AnimeDex.episode(epid[0])
     dl_hash = get_hash(epid[0], dl_back_cb)
     dl_open_cb = f"download {id} {dl_hash}"
-    button = BTN.episode(id, surl, murl, epid[1], dl_open_cb, dl_back_cb)
+    button = BTN.episode(id, surl, murl, epid[1], dl_open_cb)
 
     await query.message.edit(
         f"**{text}**\n\n© {query.from_user.mention}", reply_markup=button
