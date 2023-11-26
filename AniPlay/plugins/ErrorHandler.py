@@ -8,7 +8,7 @@ def CMDErrorHandler(func):
         except Exception as e:
             print(e)
             try:
-                await message.reply_message(
+                await message.reply_text(
                     "Something went wrong.\n\nReport @TechZBots_Support"
                 )
             except:
