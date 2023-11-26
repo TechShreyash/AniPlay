@@ -26,7 +26,7 @@ class AnimeDex:
         img = data["image"]
 
         for i, j in data.items():
-            if i not in ["name", "image", "id", "plot_summary", "source"]:
+            if i not in ["name", "image", "id", "plot_summary", "source", "episodes"]:
                 text += (
                     "\n**" + i.title().strip() + " :** " + j.strip().replace("\n", " ")
                 )
