@@ -215,7 +215,7 @@ class BTN:
             if pos % 3 == 0:
                 x.append(
                     InlineKeyboardButton(
-                        text=i[0], url="https://animedex.live/embed?url=" + i[1]
+                        text=i[0], url="https://animedex.pages.dev/embed?url=" + i[1]
                     )
                 )
                 temp.append(x)
@@ -223,7 +223,7 @@ class BTN:
             else:
                 x.append(
                     InlineKeyboardButton(
-                        text=i[0], url="https://animedex.live/embed?url=" + i[1]
+                        text=i[0], url="https://animedex.pages.dev/embed?url=" + i[1]
                     )
                 )
             pos += 1
